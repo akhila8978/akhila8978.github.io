@@ -37,7 +37,6 @@
     overflow-x: hidden;
   }
 
-  /* ── GRID BACKGROUND ── */
   body::before {
     content: '';
     position: fixed;
@@ -50,7 +49,6 @@
     z-index: 0;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -80,7 +78,6 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── HERO ── */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -130,7 +127,7 @@
   .hero-desc {
     font-size: 17px;
     color: #9BAEC4;
-    max-width: 600px;
+    max-width: 620px;
     line-height: 1.7;
     margin-bottom: 40px;
   }
@@ -180,7 +177,6 @@
   }
   .btn-ghost:hover { background: rgba(0,217,255,0.07); transform: translateY(-1px); }
 
-  /* ── PIPELINE VISUAL — signature element ── */
   .pipeline-bar {
     position: absolute;
     right: 48px;
@@ -246,7 +242,6 @@
   }
   .pipe-node:hover .pipe-label { opacity: 1; }
 
-  /* ── SECTION SHARED ── */
   section {
     position: relative;
     z-index: 1;
@@ -278,7 +273,6 @@
     background: var(--border);
   }
 
-  /* ── SKILLS ── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -320,8 +314,14 @@
     color: #66FFB8;
     border-color: rgba(0,255,157,0.2);
   }
+  .tag.dim {
+    background: rgba(58,77,102,0.15);
+    color: var(--muted);
+    border-color: var(--dim);
+  }
+  .skill-card.building { border-style: dashed; }
+  .skill-card.building .skill-card-title { color: var(--muted); }
 
-  /* ── EXPERIENCE ── */
   .exp-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -389,7 +389,6 @@
   }
   .metric-desc { font-size: 11px; color: var(--muted); }
 
-  /* ── PROJECTS ── */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -455,7 +454,6 @@
   }
   .proj-link:hover { color: var(--accent); }
 
-  /* ── CERTS ── */
   .certs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -484,10 +482,12 @@
   .cert-icon.aws { background: rgba(255,153,0,0.15); }
   .cert-icon.gcp { background: rgba(66,133,244,0.15); }
   .cert-icon.ms { background: rgba(0,120,215,0.15); }
+  .cert-icon.databricks { background: rgba(255,62,62,0.15); }
+  .cert-icon.snowflake { background: rgba(41,181,246,0.15); }
   .cert-name { font-size: 13px; font-weight: 500; line-height: 1.4; }
   .cert-valid { font-family: var(--font-mono); font-size: 11px; color: var(--accent3); margin-top: 4px; }
+  .cert-valid.progress { color: var(--muted); }
 
-  /* ── CONTACT ── */
   .contact-section {
     background: var(--bg2);
     border-top: 1px solid var(--border);
@@ -517,7 +517,6 @@
   }
   .contact-link:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── FOOTER ── */
   footer {
     text-align: center;
     padding: 32px 48px;
@@ -528,7 +527,6 @@
     z-index: 1;
   }
 
-  /* ── ANIMATIONS ── */
   @keyframes pulse-dot {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
@@ -557,7 +555,6 @@
     left: 19px;
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { gap: 20px; }
@@ -575,7 +572,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">AK.dev</div>
   <div class="nav-links">
@@ -587,7 +583,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero" style="max-width:1300px; margin:0 auto;">
   <div class="hero-inner">
     <div class="hero-eyebrow">
@@ -597,59 +592,58 @@
       <span class="name-line">Akhila</span>
       <span class="name-line name-accent">Kurre</span>
     </h1>
-    <div class="hero-title">// Data Engineer · AWS · Snowflake · PySpark · dbt</div>
+    <div class="hero-title">// Data Engineer · AWS · Snowflake · PySpark · Databricks</div>
     <p class="hero-desc">
-      Engineering scalable, high-availability data platforms at enterprise scale. 2+ years at TCS building pipelines that power real-time analytics and BI decision-making for global stakeholders.
+      Data Engineer (currently titled System Engineer) with 2.5 years of consulting and enterprise IT experience building ETL/ELT pipelines, CDC-based ingestion, and cloud data platforms across AWS, Snowflake, and Databricks — supporting client-facing production workloads processing 1M+ records/day at TCS. Databricks Certified Data Engineer Associate.
     </p>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">40<span>%</span></div>
-        <div class="stat-label">Faster pipelines</div>
+        <div class="stat-num">25<span>%</span></div>
+        <div class="stat-label">Query performance improvement</div>
       </div>
       <div class="stat">
         <div class="stat-num">1M<span>+</span></div>
-        <div class="stat-label">Rows / day</div>
+        <div class="stat-label">Records / day processed</div>
       </div>
       <div class="stat">
-        <div class="stat-num">99.9<span>%</span></div>
-        <div class="stat-label">SLA uptime</div>
+        <div class="stat-num">99<span>%+</span></div>
+        <div class="stat-label">SLA compliance</div>
       </div>
       <div class="stat">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Cloud certifications</div>
+        <div class="stat-num">2.5</div>
+        <div class="stat-label">Years of DE experience</div>
       </div>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="mailto:akhilakurre4281@gmail.com">Get in touch →</a>
       <a class="btn btn-ghost" href="https://github.com/akhila8978" target="_blank">GitHub</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/akhila-kurre8803" target="_blank">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/akhila-kurre8803" target="_blank">LinkedIn</a>
     </div>
   </div>
 
-  <!-- Signature pipeline visual -->
   <div class="pipeline-bar">
     <div class="pipe-node" style="position:relative; overflow:hidden;">
       <div class="flow-particle" style="animation-delay:0s;"></div>
       <span class="pipe-dot green"></span> S3 Raw Ingestion
-      <span class="pipe-label">BRONZE</span>
+      <span class="pipe-label">SOURCE</span>
     </div>
     <div class="pipe-connector"></div>
     <div class="pipe-node" style="position:relative; overflow:hidden;">
       <div class="flow-particle" style="animation-delay:1s;"></div>
-      <span class="pipe-dot blue"></span> AWS Glue / EMR
+      <span class="pipe-dot blue"></span> AWS Glue ETL
       <span class="pipe-label">TRANSFORM</span>
     </div>
     <div class="pipe-connector"></div>
     <div class="pipe-node" style="position:relative; overflow:hidden;">
       <div class="flow-particle" style="animation-delay:0.5s;"></div>
-      <span class="pipe-dot blue"></span> Snowflake CDC
-      <span class="pipe-label">SILVER</span>
+      <span class="pipe-dot blue"></span> Snowflake Streams &amp; Tasks
+      <span class="pipe-label">CDC</span>
     </div>
     <div class="pipe-connector"></div>
     <div class="pipe-node" style="position:relative; overflow:hidden;">
       <div class="flow-particle" style="animation-delay:1.5s;"></div>
-      <span class="pipe-dot purple"></span> dbt Star Schema
-      <span class="pipe-label">GOLD</span>
+      <span class="pipe-dot purple"></span> SQL Validation
+      <span class="pipe-label">QUALITY</span>
     </div>
     <div class="pipe-connector"></div>
     <div class="pipe-node">
@@ -659,7 +653,6 @@
   </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
     <span class="section-tag">01 / skills</span>
@@ -682,55 +675,66 @@
         <span class="tag teal">S3</span>
         <span class="tag teal">Lambda</span>
         <span class="tag teal">Glue</span>
-        <span class="tag teal">EMR</span>
+        <span class="tag teal">CloudWatch</span>
         <span class="tag teal">Redshift</span>
-        <span class="tag teal">MWAA</span>
-        <span class="tag teal">Kinesis</span>
-        <span class="tag teal">Step Functions</span>
+        <span class="tag teal">IAM</span>
+        <span class="tag teal">EventBridge</span>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-title">Data Warehousing</div>
+      <div class="skill-card-title">Data Platforms</div>
       <div class="skill-tags">
         <span class="tag">Snowflake</span>
+        <span class="tag">Streams &amp; Tasks</span>
         <span class="tag">Snowpipe</span>
-        <span class="tag">CDC Streams</span>
-        <span class="tag">Time Travel</span>
-        <span class="tag">Redshift</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Clustering</span>
+        <span class="tag">Amazon Redshift</span>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-title">Orchestration / ELT</div>
-      <div class="skill-tags">
-        <span class="tag">Apache Airflow</span>
-        <span class="tag">dbt Core</span>
-        <span class="tag">EventBridge</span>
-        <span class="tag">Step Functions</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Big Data / Streaming</div>
+      <div class="skill-card-title">Databricks &amp; Lakehouse</div>
       <div class="skill-tags">
         <span class="tag green">Apache Spark</span>
-        <span class="tag green">Kafka</span>
-        <span class="tag green">Real-Time Analytics</span>
-        <span class="tag green">Medallion Arch.</span>
+        <span class="tag green">Delta Lake</span>
+        <span class="tag green">Delta Live Tables</span>
+        <span class="tag green">Unity Catalog</span>
+        <span class="tag green">Lakeflow Connect</span>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-title">DevOps / Governance</div>
+      <div class="skill-card-title">AI / GenAI</div>
       <div class="skill-tags">
-        <span class="tag green">Terraform IaC</span>
-        <span class="tag green">Docker</span>
-        <span class="tag green">GitHub Actions</span>
-        <span class="tag green">Great Expectations</span>
-        <span class="tag green">MS Purview</span>
+        <span class="tag">RAG Pipelines</span>
+        <span class="tag">Embeddings</span>
+        <span class="tag">Vector Search</span>
+        <span class="tag">LLM Integration</span>
+        <span class="tag">FastAPI</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-title">DevOps &amp; Backend</div>
+      <div class="skill-tags">
+        <span class="tag teal">Git</span>
+        <span class="tag teal">GitHub</span>
+        <span class="tag teal">CI/CD</span>
+        <span class="tag teal">Docker</span>
+        <span class="tag teal">Linux/Unix</span>
+        <span class="tag teal">JIRA</span>
+        <span class="tag teal">Agile/Scrum</span>
+      </div>
+    </div>
+    <div class="skill-card building">
+      <div class="skill-card-title">Currently Building</div>
+      <div class="skill-tags">
+        <span class="tag dim">dbt</span>
+        <span class="tag dim">Apache Airflow</span>
+        <span class="tag dim">Kafka</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
     <span class="section-tag">02 / experience</span>
@@ -739,35 +743,34 @@
   </div>
   <div class="exp-card">
     <div class="exp-header">
-      <div class="exp-role">Systems Engineer — Data Engineering & Production Support</div>
+      <div class="exp-role">System Engineer — Data Engineering &amp; Cloud Support</div>
       <div class="exp-date">Mar 2024 – Present</div>
     </div>
     <div class="exp-company">Tata Consultancy Services (TCS) · Hyderabad, India</div>
     <div class="exp-stack">
       <span class="tag teal">Python</span><span class="tag teal">PySpark</span><span class="tag teal">SQL</span>
-      <span class="tag teal">AWS Glue</span><span class="tag teal">Snowflake</span><span class="tag teal">dbt</span>
-      <span class="tag teal">Airflow</span><span class="tag teal">Terraform</span><span class="tag teal">Splunk</span>
+      <span class="tag teal">AWS Glue</span><span class="tag teal">Snowflake</span><span class="tag teal">AWS S3</span>
+      <span class="tag teal">AWS Lambda</span><span class="tag teal">Amazon Redshift</span><span class="tag teal">CloudWatch</span>
+      <span class="tag teal">Git</span><span class="tag teal">Agile</span>
     </div>
     <ul class="exp-bullets">
-      <li>Built scalable <strong>AWS Glue + S3 + EMR data lakehouse</strong> (Medallion architecture) processing <strong>1M+ rows/day</strong> at 99.9% SLA uptime, enabling BI teams to access analytics-ready data within minutes of ingestion.</li>
-      <li>Re-architected full-table refreshes into <strong>CDC-driven incremental MERGE</strong> using Snowflake Streams + Tasks — cut data freshness lag to under 10 minutes and improved reporting SLAs for 5+ stakeholder teams.</li>
-      <li>Designed and deployed <strong>dbt star-schema models</strong> with column-level lineage and source freshness tests, eliminating 3 recurring schema-drift incidents per quarter.</li>
-      <li>Improved <strong>SQL query performance by 25%</strong> across Redshift and Snowflake via clustering keys, materialized views, partition pruning, and CTE refactoring.</li>
-      <li>Reduced data-quality incidents by <strong>35%</strong> using Great Expectations and dbt tests across 12 pipeline stages — catching issues before they reached production dashboards.</li>
-      <li>Automated CI/CD for S3 → Lambda → Glue → Airflow workflows, cutting manual engineering effort by <strong>30%</strong> and reclaiming 8+ hours/week for the team.</li>
-      <li>Provisioned Terraform IaC modules slashing environment setup from <strong>2 days to 30 minutes</strong> across dev, staging, and production.</li>
-      <li>Reduced MTTR by <strong>40%</strong> through CloudWatch dashboards, Splunk log analysis, and incident runbooks — zero SLA breaches on all production data pipelines.</li>
+      <li><strong>Built Python- and PySpark-based ETL/ELT pipelines</strong> moving structured data across source systems, AWS S3, and Amazon Redshift, supporting 10+ daily production workflows processing 1M+ records/day with zero data loss.</li>
+      <li><strong>Implemented Snowflake Streams and Tasks</strong> for CDC pipelines, automating incremental ingestion and enabling near-real-time data availability for downstream consumers; supported migration of legacy workloads to Snowflake for improved scalability.</li>
+      <li><strong>Designed multi-stage data validation and data quality frameworks</strong> — schema checks, null handling, accuracy verification — maintaining 99%+ SLA compliance.</li>
+      <li><strong>Monitored production pipelines via AWS CloudWatch</strong>, performed root cause analysis on failures, and maintained incident runbooks — reducing recurring incidents by 20% and cutting resolution time by 35%.</li>
+      <li><strong>Optimized complex SQL</strong> (CTEs, window functions, MERGE, multi-table joins) across Snowflake and Redshift, improving query performance by 25%.</li>
+      <li><strong>Reduced ETL pipeline failure rate by 30%</strong> through proactive AWS Glue monitoring and structured debugging; operated event-driven AWS Lambda functions with CloudWatch-based failure diagnosis.</li>
+      <li><strong>Collaborated cross-functionally</strong> with BI, analytics, and application engineering teams — including client stakeholders — to translate business requirements into technical pipeline specifications within Agile/Scrum sprints using JIRA.</li>
     </ul>
     <div class="exp-metrics">
-      <div class="metric"><div class="metric-val">40%</div><div class="metric-desc">Faster pipelines</div></div>
-      <div class="metric"><div class="metric-val">35%</div><div class="metric-desc">Fewer data-quality incidents</div></div>
-      <div class="metric"><div class="metric-val">30%</div><div class="metric-desc">Less manual effort</div></div>
-      <div class="metric"><div class="metric-val">30min</div><div class="metric-desc">Env setup (was 2 days)</div></div>
+      <div class="metric"><div class="metric-val">25%</div><div class="metric-desc">Query performance</div></div>
+      <div class="metric"><div class="metric-val">30%</div><div class="metric-desc">Fewer pipeline failures</div></div>
+      <div class="metric"><div class="metric-val">35%</div><div class="metric-desc">Faster incident resolution</div></div>
+      <div class="metric"><div class="metric-val">20%</div><div class="metric-desc">Fewer recurring incidents</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-tag">03 / projects</span>
@@ -777,34 +780,34 @@
   <div class="projects-grid">
 
     <div class="proj-card">
-      <div class="proj-badge">Production · Open Source</div>
-      <div class="proj-name">PySpark Batch Processing Pipeline</div>
-      <div class="proj-desc">Production-grade PySpark batch pipeline on AWS EMR processing 2M+ daily records through a full Medallion lakehouse (Bronze → Silver → Gold). Scaled 45% faster via broadcast joins, partition pruning, and strategic caching.</div>
-      <div class="proj-impact">⚡ Raw S3 → analytics-ready Gold in under 15 minutes</div>
-      <div class="skill-tags" style="margin-top:4px;">
-        <span class="tag teal">PySpark</span><span class="tag teal">AWS EMR</span><span class="tag teal">S3</span><span class="tag teal">Airflow</span><span class="tag green">Great Expectations</span>
-      </div>
-      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-badge">Serverless · Real-Time</div>
-      <div class="proj-name">Serverless Real-Time ETL</div>
-      <div class="proj-desc">Fully serverless, event-driven ETL pipeline ingesting 500K+ daily events via S3-triggered Lambda → Glue → Redshift. EventBridge scheduling, Step Functions orchestration, and Great Expectations quality gates — all via Terraform IaC.</div>
-      <div class="proj-impact">⚡ Data latency reduced from 4 hours → 8 minutes</div>
-      <div class="skill-tags" style="margin-top:4px;">
-        <span class="tag teal">Lambda</span><span class="tag teal">Glue</span><span class="tag teal">Redshift</span><span class="tag teal">Kinesis</span><span class="tag green">Terraform</span>
-      </div>
-      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-badge award">🏆 1st Place — TCS AI Fridays S2</div>
+      <div class="proj-badge award">🏆 1st Place — TCS AI Fridays S2 (Internal Hackathon)</div>
       <div class="proj-name">Contract Intelligence Platform</div>
-      <div class="proj-desc">Production GenAI platform with a multi-agent LLM + RAG pipeline that automates contract clause extraction and risk summarisation. Replaces hours of manual legal review with sub-minute AI-assisted analysis. FastAPI backend + Next.js frontend on AWS.</div>
-      <div class="proj-impact">⚡ Hours of legal review → sub-minute AI analysis</div>
+      <div class="proj-desc">Multi-stage RAG pipeline for contract clause extraction and legal risk review — document ingestion → embedding → semantic vector retrieval → LLM inference → structured JSON response, served via a FastAPI REST backend with async processing. Owned the solution end-to-end: data prep and chunking, prompt/response handling, API design, and deployment.</div>
+      <div class="proj-impact">⚡ Hours of manual legal review → sub-minute AI-driven analysis</div>
       <div class="skill-tags" style="margin-top:4px;">
-        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM / RAG</span><span class="tag">Multi-Agent</span><span class="tag teal">AWS</span>
+        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">OpenAI API</span><span class="tag">RAG Pipeline</span><span class="tag teal">AWS</span><span class="tag teal">Vector Search</span>
+      </div>
+      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-badge">Personal Project</div>
+      <div class="proj-name">Retail Order Pipeline — Raw → Curated → Analytics</div>
+      <div class="proj-desc">Multi-layer Snowflake data pipeline (raw → curated → analytics) ingesting retail order data. Built ELT logic for schema validation and deduplication in the curated layer, producing analytics-ready tables using CTEs and window functions. Snowflake Streams and Tasks automate incremental loads between layers.</div>
+      <div class="proj-impact">⚡ Near-real-time analytics tables, minimal manual refresh</div>
+      <div class="skill-tags" style="margin-top:4px;">
+        <span class="tag">Snowflake</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">ETL/ELT</span><span class="tag">Streams &amp; Tasks</span>
+      </div>
+      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-badge">Personal Project</div>
+      <div class="proj-name">Python ETL Utility Library</div>
+      <div class="proj-desc">Modular Python ETL utility library with pluggable ingestion readers, S3/Boto3 integration, structured logging, and reusable error-handling decorators — reducing boilerplate and standardizing error handling.</div>
+      <div class="proj-impact">⚡ ~40% less boilerplate across ETL scripts</div>
+      <div class="skill-tags" style="margin-top:4px;">
+        <span class="tag">Python</span><span class="tag">OOP</span><span class="tag">Decorators</span><span class="tag teal">AWS S3</span><span class="tag teal">Boto3</span><span class="tag teal">CI/CD</span>
       </div>
       <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
     </div>
@@ -812,7 +815,6 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-header">
     <span class="section-tag">04 / certifications</span>
@@ -821,10 +823,10 @@
   </div>
   <div class="certs-grid">
     <div class="cert-card">
-      <div class="cert-icon aws">🟠</div>
+      <div class="cert-icon databricks">🧱</div>
       <div>
-        <div class="cert-name">AWS Certified DevOps Engineer – Professional</div>
-        <div class="cert-valid">Valid Apr 2029</div>
+        <div class="cert-name">Databricks Certified Data Engineer Associate</div>
+        <div class="cert-valid">Valid through Jun 2028</div>
       </div>
     </div>
     <div class="cert-card">
@@ -851,14 +853,20 @@
     <div class="cert-card">
       <div class="cert-icon ms">🔷</div>
       <div>
-        <div class="cert-name">Microsoft Power BI Data Analyst (PL-300)</div>
+        <div class="cert-name">Microsoft Power BI Data Analyst Associate (PL-300)</div>
         <div class="cert-valid">Valid 2027</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon snowflake">❄️</div>
+      <div>
+        <div class="cert-name">SnowPro Core Certification (COF-C03)</div>
+        <div class="cert-valid progress">In Progress · 2026</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
     <span class="section-tag" style="display:block; margin-bottom:12px;">05 / contact</span>
@@ -866,9 +874,9 @@
     <p>Open to Data Engineer, Snowflake Developer, and AWS Data Engineer roles at product-led, high-growth companies.</p>
     <div class="contact-links">
       <a class="contact-link" href="mailto:akhilakurre4281@gmail.com">📧 akhilakurre4281@gmail.com</a>
-      <a class="contact-link" href="https://linkedin.com/in/akhila-kurre8803" target="_blank">🔗 LinkedIn</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/akhila-kurre8803" target="_blank">🔗 LinkedIn</a>
       <a class="contact-link" href="https://github.com/akhila8978" target="_blank">⌨ GitHub</a>
-      <a class="contact-link" href="https://akhila-portfolio.github.io" target="_blank">🌐 Portfolio</a>
+      <a class="contact-link" href="https://akhila8978.github.io" target="_blank">🌐 Portfolio</a>
     </div>
   </div>
 </div>
