@@ -321,6 +321,12 @@
   }
   .skill-card.building { border-style: dashed; }
   .skill-card.building .skill-card-title { color: var(--muted); }
+  .skill-card-note {
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: 10px;
+    font-family: var(--font-mono);
+  }
 
   .exp-card {
     background: var(--surface);
@@ -592,9 +598,9 @@
       <span class="name-line">Akhila</span>
       <span class="name-line name-accent">Kurre</span>
     </h1>
-    <div class="hero-title">// Data Engineer · AWS · Snowflake · PySpark · Databricks</div>
+    <div class="hero-title">// Data Engineer · Snowflake · AWS · PySpark · RAG/LLM Pipelines</div>
     <p class="hero-desc">
-      Data Engineer (currently titled System Engineer) with 2.5 years of consulting and enterprise IT experience building ETL/ELT pipelines, CDC-based ingestion, and cloud data platforms across AWS, Snowflake, and Databricks — supporting client-facing production workloads processing 1M+ records/day at TCS. Databricks Certified Data Engineer Associate.
+      Data Engineer (currently titled System Engineer) with 2.5 years designing and operating production ETL/ELT and CDC pipelines on AWS and Snowflake, processing 1M+ records/day at 99%+ SLA compliance at TCS. Built and shipped a RAG pipeline that won 1st Place at a company-wide AI innovation challenge. Extending pipeline maturity into orchestration and transformation testing (Airflow, dbt) through active personal projects.
     </p>
     <div class="hero-stats">
       <div class="stat">
@@ -689,17 +695,7 @@
         <span class="tag">Snowpipe</span>
         <span class="tag">RBAC</span>
         <span class="tag">Clustering</span>
-        <span class="tag">Amazon Redshift</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Databricks &amp; Lakehouse</div>
-      <div class="skill-tags">
-        <span class="tag green">Apache Spark</span>
-        <span class="tag green">Delta Lake</span>
-        <span class="tag green">Delta Live Tables</span>
-        <span class="tag green">Unity Catalog</span>
-        <span class="tag green">Lakeflow Connect</span>
+        <span class="tag">Materialized Views</span>
       </div>
     </div>
     <div class="skill-card">
@@ -713,24 +709,33 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-title">DevOps &amp; Backend</div>
+      <div class="skill-card-title">Tools</div>
       <div class="skill-tags">
         <span class="tag teal">Git</span>
         <span class="tag teal">GitHub</span>
-        <span class="tag teal">CI/CD</span>
-        <span class="tag teal">Docker</span>
-        <span class="tag teal">Linux/Unix</span>
         <span class="tag teal">JIRA</span>
         <span class="tag teal">Agile/Scrum</span>
+        <span class="tag teal">Linux/Unix</span>
       </div>
     </div>
     <div class="skill-card building">
       <div class="skill-card-title">Currently Building</div>
       <div class="skill-tags">
-        <span class="tag dim">dbt</span>
         <span class="tag dim">Apache Airflow</span>
+        <span class="tag dim">dbt</span>
         <span class="tag dim">Kafka</span>
+        <span class="tag dim">Terraform</span>
       </div>
+      <div class="skill-card-note">Active personal projects — not yet production experience</div>
+    </div>
+    <div class="skill-card building">
+      <div class="skill-card-title">Databricks (Certified)</div>
+      <div class="skill-tags">
+        <span class="tag dim">Apache Spark</span>
+        <span class="tag dim">Delta Lake</span>
+        <span class="tag dim">Unity Catalog</span>
+      </div>
+      <div class="skill-card-note">Certification-level knowledge, no hands-on production work yet</div>
     </div>
   </div>
 </section>
@@ -754,19 +759,17 @@
       <span class="tag teal">Git</span><span class="tag teal">Agile</span>
     </div>
     <ul class="exp-bullets">
-      <li><strong>Built Python- and PySpark-based ETL/ELT pipelines</strong> moving structured data across source systems, AWS S3, and Amazon Redshift, supporting 10+ daily production workflows processing 1M+ records/day with zero data loss.</li>
-      <li><strong>Implemented Snowflake Streams and Tasks</strong> for CDC pipelines, automating incremental ingestion and enabling near-real-time data availability for downstream consumers; supported migration of legacy workloads to Snowflake for improved scalability.</li>
-      <li><strong>Designed multi-stage data validation and data quality frameworks</strong> — schema checks, null handling, accuracy verification — maintaining 99%+ SLA compliance.</li>
-      <li><strong>Monitored production pipelines via AWS CloudWatch</strong>, performed root cause analysis on failures, and maintained incident runbooks — reducing recurring incidents by 20% and cutting resolution time by 35%.</li>
-      <li><strong>Optimized complex SQL</strong> (CTEs, window functions, MERGE, multi-table joins) across Snowflake and Redshift, improving query performance by 25%.</li>
-      <li><strong>Reduced ETL pipeline failure rate by 30%</strong> through proactive AWS Glue monitoring and structured debugging; operated event-driven AWS Lambda functions with CloudWatch-based failure diagnosis.</li>
-      <li><strong>Collaborated cross-functionally</strong> with BI, analytics, and application engineering teams — including client stakeholders — to translate business requirements into technical pipeline specifications within Agile/Scrum sprints using JIRA.</li>
+      <li><strong>Built Python- and PySpark-based ETL/ELT pipelines</strong> moving structured data across source systems, S3, and Redshift, powering 10+ daily production workflows and processing 1M+ records/day with automated reconciliation and error handling.</li>
+      <li><strong>Implemented Snowflake Streams and Tasks</strong> for CDC-based incremental ingestion, cutting data latency for downstream consumers from batch (T+1) to near-real-time.</li>
+      <li><strong>Designed multi-stage data validation</strong> (schema checks, null handling, accuracy verification) that sustained 99%+ SLA compliance across production pipelines.</li>
+      <li><strong>Monitored pipelines via CloudWatch</strong>, led root-cause analysis on failures, and authored incident runbooks — cutting recurring incident volume and average resolution time for the team.</li>
+      <li><strong>Tuned complex SQL</strong> (CTEs, window functions, MERGE, multi-table joins) across Snowflake and Redshift, improving query performance by 25%.</li>
+      <li><strong>Partnered with BI, analytics, application engineering, and client stakeholders</strong> to translate business requirements into technical specs within Agile/Scrum sprints.</li>
     </ul>
     <div class="exp-metrics">
       <div class="metric"><div class="metric-val">25%</div><div class="metric-desc">Query performance</div></div>
-      <div class="metric"><div class="metric-val">30%</div><div class="metric-desc">Fewer pipeline failures</div></div>
-      <div class="metric"><div class="metric-val">35%</div><div class="metric-desc">Faster incident resolution</div></div>
-      <div class="metric"><div class="metric-val">20%</div><div class="metric-desc">Fewer recurring incidents</div></div>
+      <div class="metric"><div class="metric-val">1M+</div><div class="metric-desc">Records / day</div></div>
+      <div class="metric"><div class="metric-val">99%+</div><div class="metric-desc">SLA compliance</div></div>
     </div>
   </div>
 </section>
@@ -783,33 +786,44 @@
       <div class="proj-badge award">🏆 1st Place — TCS AI Fridays S2 (Internal Hackathon)</div>
       <div class="proj-name">Contract Intelligence Platform</div>
       <div class="proj-desc">Multi-stage RAG pipeline for contract clause extraction and legal risk review — document ingestion → embedding → semantic vector retrieval → LLM inference → structured JSON response, served via a FastAPI REST backend with async processing. Owned the solution end-to-end: data prep and chunking, prompt/response handling, API design, and deployment.</div>
-      <div class="proj-impact">⚡ Hours of manual legal review → sub-minute AI-driven analysis</div>
+      <div class="proj-impact">⚡ Hours of manual legal review → sub-minute AI-driven analysis (demo)</div>
       <div class="skill-tags" style="margin-top:4px;">
         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">OpenAI API</span><span class="tag">RAG Pipeline</span><span class="tag teal">AWS</span><span class="tag teal">Vector Search</span>
       </div>
-      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
+      <a class="proj-link" href="https://github.com/akhila8978/contract-clause-summarizer" target="_blank">↗ github.com/akhila8978/contract-clause-summarizer</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-badge">Personal Project</div>
-      <div class="proj-name">Retail Order Pipeline — Raw → Curated → Analytics</div>
-      <div class="proj-desc">Multi-layer Snowflake data pipeline (raw → curated → analytics) ingesting retail order data. Built ELT logic for schema validation and deduplication in the curated layer, producing analytics-ready tables using CTEs and window functions. Snowflake Streams and Tasks automate incremental loads between layers.</div>
-      <div class="proj-impact">⚡ Near-real-time analytics tables, minimal manual refresh</div>
+      <div class="proj-name">Retail Order Pipeline — Raw → Staging → Analytics</div>
+      <div class="proj-desc">3-layer Snowflake pipeline (raw, staging, analytics) with warehouse/RBAC setup, Snowpipe auto-ingestion, VARIANT/JSON parsing, and MERGE-based upserts driven by Streams and Tasks for CDC. Uses Time Travel and Zero-Copy Cloning for recovery and environment management; clustering keys and Query Profile analysis benchmark warehouse-size tradeoffs.</div>
+      <div class="proj-impact">⚡ CDC-driven near-real-time analytics tables</div>
       <div class="skill-tags" style="margin-top:4px;">
-        <span class="tag">Snowflake</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">ETL/ELT</span><span class="tag">Streams &amp; Tasks</span>
+        <span class="tag">Snowflake</span><span class="tag">SQL</span><span class="tag">RBAC</span><span class="tag">Snowpipe</span><span class="tag">Streams &amp; Tasks</span><span class="tag">Time Travel</span>
       </div>
-      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
+      <a class="proj-link" href="https://github.com/akhila8978/Retail-Snowflake-Project" target="_blank">↗ github.com/akhila8978/Retail-Snowflake-Project</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-badge">Personal Project</div>
-      <div class="proj-name">Python ETL Utility Library</div>
-      <div class="proj-desc">Modular Python ETL utility library with pluggable ingestion readers, S3/Boto3 integration, structured logging, and reusable error-handling decorators — reducing boilerplate and standardizing error handling.</div>
-      <div class="proj-impact">⚡ ~40% less boilerplate across ETL scripts</div>
+      <div class="proj-name">Weather Data ETL Pipeline with Airflow</div>
+      <div class="proj-desc">End-to-end ETL pipeline extracting real-time weather data for 5 cities from the Open-Meteo API, transforming and validating it with Pandas, and loading it into a SQLite warehouse. Orchestrated as an Apache Airflow DAG scheduled every 6 hours with SLA alerting and automated retry logic on task failure.</div>
+      <div class="proj-impact">⚡ Scheduled, self-healing ingestion via Airflow retries</div>
       <div class="skill-tags" style="margin-top:4px;">
-        <span class="tag">Python</span><span class="tag">OOP</span><span class="tag">Decorators</span><span class="tag teal">AWS S3</span><span class="tag teal">Boto3</span><span class="tag teal">CI/CD</span>
+        <span class="tag">Python</span><span class="tag">Apache Airflow</span><span class="tag">Pandas</span><span class="tag">SQLite</span><span class="tag teal">REST API</span>
       </div>
-      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978</a>
+      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978 — REPLACE with actual repo URL</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-badge">Personal Project</div>
+      <div class="proj-name">dbt Transformation Layer — Retail Order Pipeline</div>
+      <div class="proj-desc">Layered dbt project (staging → intermediate → marts) modeling a star schema (fact_orders, dim_customer, dim_product, dim_date) on top of the existing Snowflake CDC pipeline. Schema tests (not_null, unique, relationships, accepted_values) plus custom singular business-rule tests, with auto-generated documentation and lineage via dbt docs.</div>
+      <div class="proj-impact">⚡ Tested, documented star-schema marts on Snowflake</div>
+      <div class="skill-tags" style="margin-top:4px;">
+        <span class="tag">dbt</span><span class="tag">Snowflake</span><span class="tag">SQL</span><span class="tag">dbt_utils</span>
+      </div>
+      <a class="proj-link" href="https://github.com/akhila8978" target="_blank">↗ github.com/akhila8978 — REPLACE with actual repo URL</a>
     </div>
 
   </div>
