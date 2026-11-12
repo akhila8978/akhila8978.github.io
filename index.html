@@ -1,61 +1,934 @@
-<section id="certifications">
-  <div class="section-header">
-    <span class="section-tag">04 / certifications</span>
-    <h2>Certifications</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card"><div class="cert-icon ms">🔷</div><div><div class="cert-name">Microsoft Certified: Fabric Data Engineer Associate</div></div></div>
-    <div class="cert-card"><div class="cert-icon databricks">🧱</div><div><div class="cert-name">Databricks Certified Data Engineer Associate</div></div></div>
-    <div class="cert-card"><div class="cert-icon aws">🟠</div><div><div class="cert-name">AWS Certified DevOps Engineer – Professional</div></div></div>
-    <div class="cert-card"><div class="cert-icon aws">🟠</div><div><div class="cert-name">AWS Certified Developer – Associate</div></div></div>
-    <div class="cert-card"><div class="cert-icon aws">🟠</div><div><div class="cert-name">AWS Certified AI Practitioner</div></div></div>
-    <div class="cert-card"><div class="cert-icon gcp">🔵</div><div><div class="cert-name">Google Cloud Generative AI Leader</div></div></div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Akhila Kurre - Data Engineer with 2.8 years of experience in Azure Data Engineering, Python, PySpark, SQL and Big Data.">
+<meta name="author" content="Akhila Kurre">
+<title>Akhila Kurre | Azure Data Engineer</title>
 
-<section id="recognition">
-  <div class="section-header">
-    <span class="section-tag">05 / recognition</span>
-    <h2>Awards &amp; Education</h2>
-    <div class="section-line"></div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080C14;
+  --bg2: #0D1421;
+  --surface: #141E2E;
+  --border: #1E2D42;
+  --accent: #00D9FF;
+  --purple: #7B6EF6;
+  --green: #00FF9D;
+  --text: #E8EDF5;
+  --muted: #8A9EBA;
+  --mono: 'Space Mono', monospace;
+  --display: 'Space Grotesk', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--display);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,217,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,217,255,.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a { color: inherit; }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: rgba(8,12,20,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font: 12px var(--mono);
+  text-decoration: none;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hero {
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: auto;
+  padding: 150px 7% 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-inner { max-width: 780px; }
+
+.eyebrow {
+  color: var(--accent);
+  font: 12px var(--mono);
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.eyebrow span {
+  color: var(--green);
+  margin-right: 8px;
+}
+
+h1 {
+  font-size: clamp(55px, 8vw, 90px);
+  line-height: 1;
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+}
+
+.name-accent { color: var(--accent); }
+
+.hero-title {
+  color: var(--muted);
+  font: 15px var(--mono);
+  margin-bottom: 25px;
+}
+
+.hero-desc {
+  color: #A8B8CC;
+  max-width: 700px;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin: 35px 0;
+}
+
+.stat {
+  border-left: 2px solid var(--accent);
+  padding-left: 15px;
+}
+
+.stat-number {
+  font: bold 30px var(--mono);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 23px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  text-decoration: none;
+  font: 12px var(--mono);
+  transition: .2s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: rgba(0,217,255,.1);
+}
+
+.btn.primary:hover {
+  background: #5AE7FF;
+}
+
+.pipeline {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 230px;
+}
+
+.pipeline div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 13px;
+  margin: 12px 0;
+  color: var(--muted);
+  font: 11px var(--mono);
+}
+
+.pipeline div:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 90px 7%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 42px;
+}
+
+.section-number {
+  color: var(--accent);
+  font: 11px var(--mono);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(27px, 4vw, 40px);
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.skills-grid, .projects-grid, .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 17px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 24px;
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: var(--purple);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  color: var(--purple);
+  font: 12px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: rgba(0,217,255,.07);
+  color: var(--accent);
+  border: 1px solid rgba(0,217,255,.15);
+  padding: 5px 9px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.experience-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exp-top h3 { font-size: 21px; }
+
+.exp-date {
+  color: var(--accent);
+  font: 11px var(--mono);
+}
+
+.company {
+  color: var(--muted);
+  margin: 7px 0 20px;
+}
+
+.exp-subtitle {
+  color: var(--accent);
+  font-size: 16px;
+  margin: 25px 0 10px;
+}
+
+ul { padding-left: 20px; }
+
+li {
+  color: #A8B8CC;
+  margin: 9px 0;
+  font-size: 14px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-label {
+  color: var(--green);
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.project-label.award { color: #FFD166; }
+
+.project-card h3 {
+  color: var(--text);
+  font: 600 18px var(--display);
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font: 11px var(--mono);
+  margin-top: auto;
+}
+
+.project-link:hover { text-decoration: underline; }
+
+.cert-card {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.cert-icon { font-size: 23px; }
+
+.cert-card p {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.recognition-grid p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.contact {
+  max-width: none;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 850px;
+  margin: auto;
+}
+
+.contact p {
+  color: var(--muted);
+  margin: 15px 0 30px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  color: var(--muted);
+  font: 11px var(--mono);
+}
+
+@media(max-width: 950px) {
+  .pipeline { display: none; }
+}
+
+@media(max-width: 700px) {
+  nav {
+    position: relative;
+    padding: 15px 5%;
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .nav-links { gap: 13px; }
+
+  .hero {
+    min-height: auto;
+    padding: 90px 6%;
+  }
+
+  section { padding: 65px 6%; }
+
+  .stats { gap: 20px; }
+
+  .experience-card { padding: 20px; }
+
+  .section-heading { gap: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-logo">AK.dev</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#recognition">Awards</a>
+    <a href="#contact">Contact</a>
   </div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-title">Awards &amp; Recognition</div>
-      <div class="exp-bullets">
-        <p><strong>AI Fridays Innovator Award</strong><br/><span style="color:var(--muted);">TCS Innovation Awards · 24 May 2026</span></p>
-        <p style="margin-top:14px;"><strong>Feedback Enabler Certificate</strong><br/><span style="color:var(--muted);">Beyond Performance / Career Management Awards · 28 Jan 2026</span></p>
-        <p style="margin-top:14px;"><strong>tcsAI Spark</strong><br/><span style="color:var(--muted);">TCS Innovation Awards · 22 Sep 2025</span></p>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span>●</span> OPEN TO DATA ENGINEER / AZURE DATA ENGINEER ROLES
+    </div>
+
+    <h1>
+      Akhila<br>
+      <span class="name-accent">Kurre</span>
+    </h1>
+
+    <div class="hero-title">
+      // Data Engineer · Azure · Python · PySpark · SQL · Big Data
+    </div>
+
+    <p class="hero-desc">
+      Data Engineer at Tata Consultancy Services with 2.8 years of
+      experience in ETL development, SQL-based data validation and
+      production support for enterprise customer, order and billing data.
+      Experienced with Azure Data Factory, ADLS Gen2, Azure Databricks,
+      Synapse, Talend, Hadoop, Hive, Python and PySpark. Built a
+      GenAI/RAG Contract Intelligence Platform recognized at
+      TCS AI Fridays Season 2.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">2.8</div>
+        <div class="stat-label">Years of experience</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">1st</div>
+        <div class="stat-label">TCS AI Fridays Season 2</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">Azure</div>
+        <div class="stat-label">Data Engineering focus</div>
       </div>
     </div>
-    <div class="skill-card">
-      <div class="skill-card-title">Education</div>
-      <p><strong>B.Tech — Information Technology</strong></p>
-      <p style="color:var(--muted); margin-top:6px;">Kakatiya University, Telangana</p>
-      <p style="color:var(--muted);">CGPA: 8.5 / 10 · 2019–2023</p>
+
+    <div class="buttons">
+      <a class="btn primary" href="mailto:akhilakurre4281@gmail.com">
+        Get in touch →
+      </a>
+
+      <a class="btn" href="https://github.com/akhila8978" target="_blank" rel="noopener noreferrer">
+        GitHub Profile
+      </a>
+
+      <a class="btn" href="https://www.linkedin.com/in/akhila-kurre8803" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
     </div>
+  </div>
+
+  <div class="pipeline">
+    <div>● Source Systems &amp; APIs</div>
+    <div>● Azure Data Factory</div>
+    <div>● ADLS Gen2 · Bronze</div>
+    <div>● Databricks · Silver / Gold</div>
+    <div>● Synapse · Power BI</div>
+  </div>
+</header>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-heading">
+    <span class="section-number">01 / SKILLS</span>
+    <h2>Technical Stack</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="skills-grid">
+
+    <div class="card">
+      <h3>Programming &amp; Querying</h3>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">PySpark</span>
+        <span class="tag">Apache Spark</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Microsoft Azure &amp; Fabric</h3>
+      <div class="tags">
+        <span class="tag">Azure Data Factory</span>
+        <span class="tag">ADLS Gen2</span>
+        <span class="tag">Azure Databricks</span>
+        <span class="tag">Synapse Analytics</span>
+        <span class="tag">Microsoft Fabric</span>
+        <span class="tag">Power BI</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Big Data &amp; ETL</h3>
+      <div class="tags">
+        <span class="tag">Hadoop / HDFS</span>
+        <span class="tag">Hive</span>
+        <span class="tag">Talend</span>
+        <span class="tag">Pentaho</span>
+        <span class="tag">Apache Airflow</span>
+        <span class="tag">dbt</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>AWS &amp; Cloud</h3>
+      <div class="tags">
+        <span class="tag">Amazon S3</span>
+        <span class="tag">EMR</span>
+        <span class="tag">AWS Glue</span>
+        <span class="tag">Lambda</span>
+        <span class="tag">Redshift</span>
+        <span class="tag">CloudWatch</span>
+        <span class="tag">IAM</span>
+        <span class="tag">GCP</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Data Warehousing</h3>
+      <div class="tags">
+        <span class="tag">Snowflake</span>
+        <span class="tag">Snowpipe</span>
+        <span class="tag">Streams &amp; Tasks</span>
+        <span class="tag">CDC</span>
+        <span class="tag">Delta</span>
+        <span class="tag">Medallion Architecture</span>
+        <span class="tag">Data Quality</span>
+        <span class="tag">Dimensional Modeling</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tools &amp; Application</h3>
+      <div class="tags">
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Postman</span>
+        <span class="tag">Instana</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Agile / Scrum</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<div class="contact-section" id="contact">
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-heading">
+    <span class="section-number">02 / EXPERIENCE</span>
+    <h2>Work Experience</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="experience-card">
+    <div class="exp-top">
+      <h3>System Engineer — Data Engineering</h3>
+      <span class="exp-date">MAR 2024 – PRESENT</span>
+    </div>
+
+    <div class="company">
+      Tata Consultancy Services (TCS) · Hyderabad, India
+    </div>
+
+    <div class="tags">
+      <span class="tag">Azure Data Factory</span>
+      <span class="tag">ADLS Gen2</span>
+      <span class="tag">Databricks</span>
+      <span class="tag">PySpark</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Talend</span>
+      <span class="tag">Hadoop</span>
+      <span class="tag">Hive</span>
+    </div>
+
+    <h3 class="exp-subtitle">
+      Tata Play Broadband — Order Management &amp; Data Engineering
+    </h3>
+
+    <ul>
+      <li>
+        Built Azure pipelines using Azure Data Factory to ingest data
+        from SQL Server, APIs and CSV/JSON files into ADLS Gen2.
+      </li>
+      <li>
+        Implemented PySpark transformations in Azure Databricks across
+        Bronze, Silver and Gold layers; loaded curated datasets to
+        Synapse for Power BI reporting.
+      </li>
+      <li>
+        Monitored and troubleshot Pentaho ETL jobs loading customer
+        and order data into target tables.
+      </li>
+      <li>
+        Performed SQL source-to-target validation for activations,
+        suspensions, resumptions, cease orders, add-on orders and
+        bulk orders.
+      </li>
+      <li>
+        Executed null, duplicate, schema, record-count and
+        consistency checks.
+      </li>
+      <li>
+        Troubleshot production issues using SQL, application logs,
+        Instana and Postman API tracing across order management,
+        billing, AAA and GIS systems.
+      </li>
+      <li>
+        Automated URL and password reset activities to reduce
+        repetitive manual effort.
+      </li>
+    </ul>
+
+    <h3 class="exp-subtitle">
+      AP Datalake — Talend ETL &amp; Big Data Engineering
+    </h3>
+
+    <ul>
+      <li>
+        Developed Talend ETL jobs to ingest data from Oracle, MySQL,
+        SQL Server and MongoDB into the Hive raw layer on Hadoop HDFS.
+      </li>
+      <li>
+        Built Python and PySpark transformations to cleanse and
+        standardize data into schema and curated layers.
+      </li>
+      <li>
+        Prepared curated datasets consumed by Angular and Qlik applications.
+      </li>
+    </ul>
+
+    <p style="color:var(--muted);font-size:12px;margin-top:20px;">
+      Project descriptions are summarized at a high level.
+      No client-confidential data or code is included.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-heading">
+    <span class="section-number">03 / PROJECTS</span>
+    <h2>Featured Projects</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="card project-card">
+      <div class="project-label">Personal Project</div>
+      <h3>Retail Order Pipeline — Snowflake &amp; dbt</h3>
+
+      <p>
+        Built a layered Snowflake data pipeline with raw, staging
+        and analytics layers. Used Snowpipe for ingestion, Streams
+        and Tasks for CDC, SQL MERGE for upserts, and dbt models
+        for transformations and analytics marts. Includes star
+        schema design, data tests, documentation and lineage.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Snowflake</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Snowpipe</span>
+        <span class="tag">Streams &amp; Tasks</span>
+        <span class="tag">dbt</span>
+      </div>
+
+      <a class="project-link"
+         href="https://github.com/akhila8978/retail-order-dbt-pipeline"
+         target="_blank" rel="noopener noreferrer">
+        ↗ View project on GitHub
+      </a>
+    </div>
+
+    <div class="card project-card">
+      <div class="project-label award">
+        🏆 1st Place — TCS AI Fridays Season 2
+      </div>
+
+      <h3>Contract Intelligence Platform</h3>
+
+      <p>
+        Created a GenAI/RAG solution for contract intelligence.
+        The workflow includes document chunking, embeddings,
+        semantic retrieval, LLM inference and structured JSON
+        responses, supported by an asynchronous Python FastAPI backend.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Embeddings</span>
+        <span class="tag">LLM</span>
+      </div>
+
+      <a class="project-link"
+         href="https://github.com/akhila8978/contract-clause-summarizer"
+         target="_blank" rel="noopener noreferrer">
+        ↗ View project on GitHub
+      </a>
+    </div>
+
+    <div class="card project-card">
+      <div class="project-label">Personal Project</div>
+      <h3>SQLite Revenue Pipeline</h3>
+
+      <p>
+        A Python and SQL data engineering project for structured
+        data processing and revenue analysis. Visit the repository
+        for implementation details and documentation.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">ETL</span>
+      </div>
+
+      <a class="project-link"
+         href="https://github.com/akhila8978/SQLite-revenue-pipeline"
+         target="_blank" rel="noopener noreferrer">
+        ↗ View project on GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-heading">
+    <span class="section-number">04 / CERTIFICATIONS</span>
+    <h2>Certifications</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="card cert-card">
+      <span class="cert-icon">🔷</span>
+      <p>Microsoft Certified: Fabric Data Engineer Associate</p>
+    </div>
+
+    <div class="card cert-card">
+      <span class="cert-icon">🧱</span>
+      <p>Databricks Certified Data Engineer Associate</p>
+    </div>
+
+    <div class="card cert-card">
+      <span class="cert-icon">🟠</span>
+      <p>AWS Certified DevOps Engineer – Professional</p>
+    </div>
+
+    <div class="card cert-card">
+      <span class="cert-icon">🟠</span>
+      <p>AWS Certified Developer – Associate</p>
+    </div>
+
+    <div class="card cert-card">
+      <span class="cert-icon">🟠</span>
+      <p>AWS Certified AI Practitioner</p>
+    </div>
+
+    <div class="card cert-card">
+      <span class="cert-icon">🔵</span>
+      <p>Google Cloud Generative AI Leader</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AWARDS & EDUCATION -->
+<section id="recognition">
+  <div class="section-heading">
+    <span class="section-number">05 / RECOGNITION</span>
+    <h2>Awards &amp; Education</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="recognition-grid">
+
+    <div class="card">
+      <h3>Awards &amp; Recognition</h3>
+
+      <p>
+        <strong>AI Fridays Innovator Award</strong><br>
+        TCS Innovation Awards · 24 May 2026
+      </p>
+
+      <p>
+        <strong>Feedback Enabler Certificate</strong><br>
+        Beyond Performance / Career Management Awards · 28 Jan 2026
+      </p>
+
+      <p>
+        <strong>tcsAI Spark</strong><br>
+        TCS Innovation Awards · 22 Sep 2025
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Education</h3>
+
+      <p>
+        <strong>B.Tech — Information Technology</strong>
+      </p>
+
+      <p>Kakatiya University, Telangana</p>
+      <p>CGPA: 8.5 / 10</p>
+      <p>2019–2023</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
   <div class="contact-inner">
-    <span class="section-tag" style="display:block; margin-bottom:12px;">06 / contact</span>
+
+    <div class="section-number">06 / CONTACT</div>
     <h2>Let's Build Together</h2>
-    <p>Open to Data Engineer and Azure Data Engineer opportunities.</p>
+
+    <p>
+      Open to Data Engineer and Azure Data Engineer opportunities.
+      Feel free to connect with me.
+    </p>
+
     <div class="contact-links">
-      <a class="contact-link" href="mailto:akhilakurre4281@gmail.com">📧 akhilakurre4281@gmail.com</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/akhila-kurre8803" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-      <a class="contact-link" href="https://github.com/akhila8978" target="_blank" rel="noopener noreferrer">⌨ GitHub Profile</a>
-      <a class="contact-link" href="https://github.com/akhila8978?tab=repositories" target="_blank" rel="noopener noreferrer">📁 GitHub Repositories</a>
-      <a class="contact-link" href="https://github.com/akhila8978" target="_blank" rel="noopener noreferrer">📄 GitHub Profile README</a>
-      <a class="contact-link" href="https://akhila8978.github.io" target="_blank" rel="noopener noreferrer">🌐 Portfolio</a>
+
+      <a class="btn" href="mailto:akhilakurre4281@gmail.com">
+        Email Me
+      </a>
+
+      <a class="btn"
+         href="https://www.linkedin.com/in/akhila-kurre8803"
+         target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+
+      <a class="btn"
+         href="https://github.com/akhila8978"
+         target="_blank" rel="noopener noreferrer">
+        GitHub Profile
+      </a>
+
+      <a class="btn"
+         href="https://github.com/akhila8978?tab=repositories"
+         target="_blank" rel="noopener noreferrer">
+        GitHub Repositories
+      </a>
+
     </div>
   </div>
-</div>
+</section>
 
 <footer>
   Akhila Kurre · Data Engineer · Hyderabad, India
+  <br>
+  © 2026 Akhila Kurre. All rights reserved.
 </footer>
 
 </body>
